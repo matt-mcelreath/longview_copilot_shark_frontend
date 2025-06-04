@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/longview-copilot-frontend/static/css/main.f855e6bc.css",
-    "main.js": "/longview-copilot-frontend/static/js/main.3d785267.js",
-    "static/js/453.05e8bab6.chunk.js": "/longview-copilot-frontend/static/js/453.05e8bab6.chunk.js",
-    "static/media/logo.svg": "/longview-copilot-frontend/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
-    "index.html": "/longview-copilot-frontend/index.html",
-    "main.f855e6bc.css.map": "/longview-copilot-frontend/static/css/main.f855e6bc.css.map",
-    "main.3d785267.js.map": "/longview-copilot-frontend/static/js/main.3d785267.js.map",
-    "453.05e8bab6.chunk.js.map": "/longview-copilot-frontend/static/js/453.05e8bab6.chunk.js.map"
+    "main.css": "/longview_copilot_shark_frontend/static/css/main.f855e6bc.css",
+    "main.js": "/longview_copilot_shark_frontend/static/js/main.fae8960b.js",
+    "static/js/453.05e8bab6.chunk.js": "/longview_copilot_shark_frontend/static/js/453.05e8bab6.chunk.js",
+    "static/media/logo.svg": "/longview_copilot_shark_frontend/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/longview_copilot_shark_frontend/index.html",
+    "main.f855e6bc.css.map": "/longview_copilot_shark_frontend/static/css/main.f855e6bc.css.map",
+    "main.fae8960b.js.map": "/longview_copilot_shark_frontend/static/js/main.fae8960b.js.map",
+    "453.05e8bab6.chunk.js.map": "/longview_copilot_shark_frontend/static/js/453.05e8bab6.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f855e6bc.css",
-    "static/js/main.3d785267.js"
+    "static/js/main.fae8960b.js"
   ]
 }
