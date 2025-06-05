@@ -1,8 +1,10 @@
 .App {
   text-align: center;
   min-height: 100vh;
-  background-image: url('../public/InsightBackground.png');
+  min-width: 100vw;
+  background-image: url('./InsightBackground.png');
   background-size: contain;
+  background-color: white; /* or any color you want for the empty space */
   background-position: center;
   background-repeat: no-repeat;
   display: flex;
@@ -17,12 +19,6 @@
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-body {
   min-height: 100vh;
   display: flex;
@@ -31,32 +27,28 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: black;
+  width: 100%;
+  padding: 16px 0;
+  box-sizing: border-box;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.chat-history,
+.input-row {
+  width: 100%;
+  max-width: 400px;
+  padding: 15px;
+  margin-left: 15px;
+  margin-right: 15px;
+  box-sizing: border-box;
 }
 
 .chat-history {
-  width: 100%;
-  max-width: 400px;
   min-height: 200px;
   max-height: 400px;
   overflow-y: auto;
   background: rgba(0, 0, 0, 0.5);
   border-radius: 10px;
-  padding: 16px;
   margin-bottom: 16px;
-  box-sizing: border-box;
 }
 
 .chat-message {
@@ -82,14 +74,13 @@
   display: flex;
   align-items: flex-end;
   gap: 8px;
-  width: 100%;
-  max-width: 600px;
   margin-bottom: 16px;
 }
 
 .input-row textarea {
   flex: 1;
   resize: vertical;
+  min-width: 0;
 }
 
 .input-row button {
