@@ -8,7 +8,9 @@ function App() {
   const handleSend = async () => {
     if (!input.trim()) return;
     const newMessages = [...messages, { role: 'user', content: input }];
-    setMessages(newMessages);
+    // Add temp "thinking" message
+    setMessages([...newMessages, { role: 'assistant', content: 'CoPilot is thinking...' }]);
+    setInput('');
 
     const res = await fetch('https://longview-copilot-shark-backend.onrender.com/api/chat', {
       method: 'POST',
@@ -18,8 +20,8 @@ function App() {
 
     const data = await res.json();
     const reply = data.choices[0]?.message?.content || "Sorry, I didn't understand that.";
+    // Replace the temp message with the real reply
     setMessages([...newMessages, { role: 'assistant', content: reply }]);
-    setInput('');
   };
 
   return (
