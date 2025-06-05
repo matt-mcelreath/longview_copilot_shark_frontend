@@ -25,7 +25,7 @@ function App() {
   return (
     <div className='App'>
       <div className='App-body'>
-        <h2>Longview CoPilot</h2>
+        {/* <h2>Longview CoPilot</h2> */}
         <div className="chat-history">
           {messages.map((msg, idx) => (
             <div
