@@ -2,11 +2,11 @@ import { useState } from 'react';
 import './App.css'
 
 function App() {
-  const [messages, setMessages] = useState([{ role: 'user', content: '' }]);
+  const [messages, setMessages] = useState([]);
   const [input, setInput] = useState('');
-  const [response, setResponse] = useState('');
 
   const handleSend = async () => {
+    if (!input.trim()) return;
     const newMessages = [...messages, { role: 'user', content: input }];
     setMessages(newMessages);
 
@@ -17,26 +17,41 @@ function App() {
     });
 
     const data = await res.json();
-    const reply = data.choices[0]?.message?.content;
+    const reply = data.choices[0]?.message?.content || "Sorry, I didn't understand that.";
     setMessages([...newMessages, { role: 'assistant', content: reply }]);
-    setResponse(reply);
     setInput('');
   };
 
   return (
-    <div className='App App-header'>
-      <h2>Longview CoPilot</h2>
-      <textarea
-        value={input}
-        onChange={e => setInput(e.target.value)}
-        rows={4}
-        cols={50}
-      />
-      <br />
-      <button onClick={handleSend}>Send</button>
-      <div style={{ marginTop: '1rem' }}>
-        <strong>Response:</strong>
-        <p>{response}</p>
+    <div className='App'>
+      <div className='App-body'>
+        <h2>Longview CoPilot</h2>
+        <div className="chat-history">
+          {messages.map((msg, idx) => (
+            <div
+              key={idx}
+              className={`chat-message ${msg.role === 'user' ? 'user' : 'assistant'}`}
+            >
+              <strong>{msg.role === 'user' ? 'You' : 'CoPilot'}:</strong> {msg.content}
+            </div>
+          ))}
+        </div>
+        <div className="input-row">
+          <textarea
+            value={input}
+            onChange={e => setInput(e.target.value)}
+            rows={4}
+            cols={50}
+            placeholder="Type your message..."
+            onKeyDown={e => {
+              if (e.key === 'Enter' && !e.shiftKey) {
+                e.preventDefault();
+                handleSend();
+              }
+            }}
+          />
+          <button onClick={handleSend}>Send</button>
+        </div>
       </div>
     </div>
   );
